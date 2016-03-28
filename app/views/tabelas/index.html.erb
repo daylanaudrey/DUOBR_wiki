@@ -1,0 +1,14 @@
+<h1>Tabelas</h1>
+<table class="table table-hover">
+  <tbody>
+  	<% @tabelas.each do |tabela| %>
+      <tr>
+        <td><%= tabela.name %></td>
+        <td><%= tabela.project&.name || "Nenhum projeto selecionado" %></td>
+        <td><%= link_to 'Editar', edit_tabela_path(tabela), class:"btn btn-info btn-sm pull-right" %></td>
+        <td><%= button_to "Remover", tabela, method: :delete, class: "btn btn-danger btn-sm pull-right", data: { confirm: "Tem certeza que deseja remover #{tabela.name}?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Nova Tabela', new_tabela_path, class:"btn btn-primary" %>

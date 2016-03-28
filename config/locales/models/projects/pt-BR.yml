@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      project: Projeto
+    model_names:
+      project:
+        singular: projeto
+        plural: projetos
+        human_singular: Projeto
+        human_plural: Projetos
+    attributes:
+      project:
+        name: Nome

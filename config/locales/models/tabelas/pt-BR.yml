@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      tabela: Tabela
+    model_names:
+      tabela:
+        singular: tabela
+        plural: tabelas
+        human_singular: Tabela
+        human_plural: Tabelas
+    attributes:
+      tabela:
+        name: Nome
+        project_id: Projeto

@@ -1,0 +1,18 @@
+pt-BR:
+  activerecord:
+    models:
+      field: Campo
+    model_names:
+      field:
+        singular: campo
+        plural: campos
+        human_singular: Campo
+        human_plural: Campos
+    attributes:
+      field:
+        name: Nome
+        tipo: Tipo
+        user_description: Descrição para Usuário
+        technical_description: Descrição Técnica
+        target_table: Tabela Destino
+        tabela_id: Tabela

@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      area: Área
+    model_names:
+      area:
+        singular: área
+        plural: áreas
+        human_singular: Área
+        human_plural: Áreas
+    attributes:
+      area:
+        name: Nome
+        project_id: Projeto

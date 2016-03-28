@@ -1,0 +1,35 @@
+<% @tabela.errors.full_messages.each do |message|%>
+    <div class="alert alert-danger" role="alert"><%=message%></div>
+<% end %>
+
+<%= form_for(@tabela) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :autofocus => true, class: "form-control" %>
+  </div>
+	<div class="form-group">
+    <%= f.label :project_id %>
+    <%= f.collection_select :project_id, @projeto, :id, :name, {}, class: "form-control" %>
+	</div> 
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Descrição Usuário</th>
+        <th>Descrição Técnica</th>
+        <th>Tabela Destino</th>
+      </tr>
+    </thead>
+    <tbody id="fields_fields">
+      <%= f.fields_for :fields do |builder| %>
+        <%= render 'field_fields', f: builder %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to_add_fields "Adicionar Campo", f, :fields, data: {target: "#fields_fields"} %>
+  <%= f.submit class: "btn btn-primary" %>
+  <br/><br/>
+<% end %>
+<%= link_to t('links.back'), tabelas_path, class: "btn btn-default pull-right" %>

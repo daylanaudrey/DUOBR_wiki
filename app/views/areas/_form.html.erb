@@ -1,0 +1,17 @@
+<% @area.errors.full_messages.each do |message|%>
+    <div class="alert alert-danger" role="alert"><%=message%></div>
+<% end %>
+
+<%= form_for(@area) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :autofocus => true, class: "form-control" %>
+  </div>
+	<div class="form-group">
+    <%= f.label :project_id %>
+    <%= f.collection_select :project_id, @projetos, :id, :name, {}, class: "form-control" %>
+	</div>	  
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+<br/>
+<%= link_to t('links.back'), areas_path, class: "btn btn-default pull-right" %>

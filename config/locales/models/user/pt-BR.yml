@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Usuário
+    model_names:
+      user:
+        singular: usuário
+        plural: usuários
+        human_singular: Usuário
+        human_plural: Usuários
+    attributes:
+      user:
+        email: Email
+        password: Senha

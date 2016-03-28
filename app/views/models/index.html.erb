@@ -1,0 +1,20 @@
+<h1>Modelos</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Tabela</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @models.each do |model| %>
+      <tr>
+        <td><%= model.name %></td>
+        <td><%= model.tabela&.name || "Nenhuma tabela cadastrada" %></td>
+        <td><%= link_to 'Editar', edit_model_path(model), class:"btn btn-info" %></td>
+        <td><%= button_to "Remover", model, method: :delete, class: "btn btn-danger btn-sm", data: { confirm: "Tem certeza que deseja remover #{model.name}?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Novo Modelo', new_model_path, class:"btn btn-primary" %>

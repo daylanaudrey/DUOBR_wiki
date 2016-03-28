@@ -1,0 +1,33 @@
+<% @field.errors.full_messages.each do |message|%>
+    <div class="alert alert-danger" role="alert"><%=message%></div>
+<% end %>
+
+<%= form_for(@field) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :autofocus => true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tipo %>
+    <%= f.text_field :tipo, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_description %>
+    <%= f.text_area :user_description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :technical_description %>
+    <%= f.text_area :technical_description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :target_table %>
+    <%= f.text_field :target_table, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tabela_id %>
+  	<%= f.collection_select :tabela_id, @tabelas, :id, :name, {}, class: "form-control" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+<br/>
+<%= link_to t('links.back'), fields_path, class: "btn btn-default pull-right" %>

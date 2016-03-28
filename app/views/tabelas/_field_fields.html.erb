@@ -1,0 +1,11 @@
+<tr>
+  <td><%= f.text_field :name %></td>
+  <td><%= f.text_field :tipo %></td>
+  <td><%= f.text_area :user_description %></td>
+  <td><%= f.text_area :technical_description %></td>
+  <td><%= f.text_field :target_table %></td>
+  <td>
+  	<%= f.hidden_field :_destroy %>
+  	<%= link_to "Remover", "#", onclick:"Add_Fields", class: "remove_fields btn btn-danger pull-right" %>
+  </td>
+</tr>

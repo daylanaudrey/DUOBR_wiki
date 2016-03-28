@@ -1,0 +1,24 @@
+<h1>Campos</h1>
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Tabela Destino</th>
+      <th>Tabela</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fields.each do |field| %>
+      <tr>
+        <td><%= field.name %></td>
+        <td><%= field.tipo %></td>
+        <td><%= field.target_table %></td>
+        <td><%= field.tabela&.name || "Nenhuma tabela cadastrada" %></td>
+        <td><%= link_to 'Editar', edit_field_path(field), class:"btn btn-info" %></td>
+        <td><%= button_to "Remover", field, method: :delete, class: "btn btn-danger btn-sm", data: { confirm: "Tem certeza que deseja remover #{field.name}?" } %></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Novo Campo', new_field_path, class:"btn btn-primary" %>

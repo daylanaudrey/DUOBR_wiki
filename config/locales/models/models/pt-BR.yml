@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      model: Modelo
+    model_names:
+      model:
+        singular: modelo
+        plural: modelos
+        human_singular: Modelo
+        human_plural: Modelos
+    attributes:
+      model:
+        name: Nome
+        user_description: Descrição Usuário
+        technical_description: Descrição Técnica

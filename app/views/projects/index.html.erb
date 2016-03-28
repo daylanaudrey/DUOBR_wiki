@@ -1,0 +1,13 @@
+<h1>Projetos</h1>
+<table class="table table-hover">
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td style="width: 90%"><%= project.name %></td>
+        <td><%= link_to 'Editar', edit_project_path(project), class:"btn btn-info" %></td>
+        <td><%= button_to "Remover", project, method: :delete, class: "btn btn-danger btn-sm pull-right", data: { confirm: "Tem certeza que deseja remover #{project.name}?" } %></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Novo Projeto', new_project_path, class:"btn btn-primary" %>
